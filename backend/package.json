@@ -1,6 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
+  "description": "Child Health Record App backend",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -8,13 +9,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "cors": "^2.8.5",
-<<<<<<< HEAD
-    "express": "^5.1.0"
-=======
     "express": "^4.21.2"
->>>>>>> 2083033c19c616e9067c750e464deefe3c33c64c
   }
 }

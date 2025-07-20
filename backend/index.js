@@ -1,37 +1,21 @@
-<<<<<<< HEAD
-const express = require('express');
-const cors = require('cors');
-
+const express = require("express");
+const cors = require("cors");
 const app = express();
-const PORT = 5000;
 
-// Allow requests from frontend
-app.use(cors());
+const allowedOrigins = [
+  "https://regal-boba-96e0c7.netlify.app"
+];
 
-// Default route
-app.get('/', (req, res) => {
-  res.send('Hello from Backend!');
-});
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true
+}));
 
-app.listen(PORT, () => {
-  console.log(`✅ Backend is running at http://localhost:${PORT}`);
-});
-=======
-// backend/index.js
-const express = require('express');
-const cors = require('cors');
-const app = express();
-const PORT = process.env.PORT || 5000;
-
-app.use(cors());
 app.use(express.json());
 
-app.get('/', (req, res) => {
-  res.send('Backend is working!');
-});
+// your routes here
+app.use("/api/child-health", require("./routes/childHealth"));
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+app.listen(3000, () => {
+  console.log("Server running on port 3000");
 });
-
->>>>>>> 2083033c19c616e9067c750e464deefe3c33c64c
